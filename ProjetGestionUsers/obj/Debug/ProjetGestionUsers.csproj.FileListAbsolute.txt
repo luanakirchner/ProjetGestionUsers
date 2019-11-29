@@ -10,3 +10,4 @@ P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.pdb
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.frmPrincipale.resources
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.frmHome.resources
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.FrmUsers.resources
+P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.FrmAddUsers.resources

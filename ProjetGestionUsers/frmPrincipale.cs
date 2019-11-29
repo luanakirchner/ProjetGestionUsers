@@ -48,5 +48,38 @@ namespace ProjetGestionUsers
             pnlPrincipale.Controls.Add(_objFrom);
             _objFrom.Show();
         }
+
+        private void picMenu_Click(object sender, EventArgs e)
+        {
+            if(pnlMenu.Width == 70)
+            {
+                pnlMenu.Width = 236;
+                pnlPrincipale.Width = 1020;
+                pnlPrincipale.Location = new Point(252, 93);
+         
+            }
+            else
+            {
+                pnlMenu.Width = 70;
+                pnlPrincipale.Width = 1080;
+                pnlPrincipale.Location = new Point(140, 93);
+                //pnlPrincipale.Left = 100;
+               
+            }
+           
+        }
+
+        private void lblAddUsers_Click(object sender, EventArgs e)
+        {
+            _objFrom?.Close();
+            _objFrom = new FrmAddUsers
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+            pnlPrincipale.Controls.Add(_objFrom);
+            _objFrom.Show();
+        }
     }
 }
