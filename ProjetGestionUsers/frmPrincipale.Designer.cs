@@ -235,7 +235,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Panel pnlPrincipale;
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label lblUsers;
         private System.Windows.Forms.PictureBox picMenu;
@@ -248,6 +247,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCalandrier;
         private System.Windows.Forms.Label lblMenu;
+        public System.Windows.Forms.Panel pnlPrincipale;
     }
 }
 

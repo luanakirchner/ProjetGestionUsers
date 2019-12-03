@@ -12,3 +12,4 @@ P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.frm
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.FrmUsers.resources
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.FrmAddUsers.resources
 P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.frmFicheClient1.resources
+P:\Projet\ProjetGestionUsers\ProjetGestionUsers\obj\Debug\ProjetGestionUsers.frmFicheClient2.resources

@@ -12,7 +12,8 @@ namespace ProjetGestionUsers
 {
     public partial class frmPrincipale : Form
     {
-        private Form _objFrom;
+        public Form _objFrom;
+        public bool ficheclient = false;
         public frmPrincipale()
         {
             InitializeComponent();
@@ -21,6 +22,23 @@ namespace ProjetGestionUsers
         private void Form1_Load(object sender, EventArgs e)
         {
             lblMenu.Text = "Bienvenu";
+            ClientToruver();
+
+        }
+        public void ClientToruver()
+        {
+            if (ficheclient)
+            {
+                _objFrom?.Close();
+                _objFrom = new frmFicheClient2
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill
+                };
+                pnlPrincipale.Controls.Add(_objFrom);
+                _objFrom.Show();
+            }
         }
 
         private void HOME_Click(object sender, EventArgs e)
@@ -89,17 +107,25 @@ namespace ProjetGestionUsers
         }
 
         private void lblFileUsers_Click(object sender, EventArgs e)
-        {
+        {   
             lblMenu.Text = "Fiche des clients";
-            _objFrom?.Close();
-            _objFrom = new frmFicheClient1
+            frmFicheClient1 frmFiche = new frmFicheClient1();
+            frmFiche.ShowDialog();
+            ficheclient =  frmFiche.clienTrouve;
+
+            if (ficheclient)
             {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill
-            };
-            pnlPrincipale.Controls.Add(_objFrom);
-            _objFrom.Show();
+                _objFrom?.Close();
+                _objFrom = new frmFicheClient2
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill
+                };
+                pnlPrincipale.Controls.Add(_objFrom);
+                _objFrom.Show();
+            }
+
         }
     }
 }

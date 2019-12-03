@@ -41,7 +41,7 @@
             // 
             this.txtNom.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(405, 168);
+            this.txtNom.Location = new System.Drawing.Point(297, 148);
             this.txtNom.Multiline = true;
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(332, 37);
@@ -51,7 +51,7 @@
             // 
             this.txtPrenom.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenom.Location = new System.Drawing.Point(405, 332);
+            this.txtPrenom.Location = new System.Drawing.Point(297, 230);
             this.txtPrenom.Multiline = true;
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(332, 37);
@@ -63,7 +63,7 @@
             this.lblNom.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.ForeColor = System.Drawing.Color.SandyBrown;
-            this.lblNom.Location = new System.Drawing.Point(398, 116);
+            this.lblNom.Location = new System.Drawing.Point(290, 106);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(111, 39);
             this.lblNom.TabIndex = 3;
@@ -75,7 +75,7 @@
             this.lblPrenom.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenom.ForeColor = System.Drawing.Color.SandyBrown;
-            this.lblPrenom.Location = new System.Drawing.Point(398, 280);
+            this.lblPrenom.Location = new System.Drawing.Point(290, 188);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(136, 39);
             this.lblPrenom.TabIndex = 4;
@@ -86,17 +86,18 @@
             this.btnValider.BackColor = System.Drawing.Color.SandyBrown;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnValider.Location = new System.Drawing.Point(405, 472);
+            this.btnValider.Location = new System.Drawing.Point(297, 302);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(332, 43);
             this.btnValider.TabIndex = 6;
             this.btnValider.Text = "Chercher client";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // picFicheClient
             // 
             this.picFicheClient.Image = global::ProjetGestionUsers.Properties.Resources.contract__1_;
-            this.picFicheClient.Location = new System.Drawing.Point(96, 142);
+            this.picFicheClient.Location = new System.Drawing.Point(36, 106);
             this.picFicheClient.Name = "picFicheClient";
             this.picFicheClient.Size = new System.Drawing.Size(230, 239);
             this.picFicheClient.TabIndex = 5;
@@ -107,15 +108,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1020, 634);
+            this.ClientSize = new System.Drawing.Size(680, 439);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.picFicheClient);
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtNom);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFicheClient1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFicheClient1";
             ((System.ComponentModel.ISupportInitialize)(this.picFicheClient)).EndInit();
             this.ResumeLayout(false);

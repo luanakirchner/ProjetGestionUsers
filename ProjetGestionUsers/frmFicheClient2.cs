@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetGestionUsers
 {
-    public partial class frmFicheClient1 : Form
+    public partial class frmFicheClient2 : Form
     {
-        public bool clienTrouve = false;
-        public frmFicheClient1()
+        public frmFicheClient2()
         {
             InitializeComponent();
-        }
-
-        private void btnValider_Click(object sender, EventArgs e)
-        {
-            clienTrouve = true;
-            this.Close();
-
-
-
         }
     }
 }
