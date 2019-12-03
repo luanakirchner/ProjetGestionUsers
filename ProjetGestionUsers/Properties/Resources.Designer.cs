@@ -63,6 +63,36 @@ namespace ProjetGestionUsers.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user {
+            get {
+                object obj = ResourceManager.GetObject("add-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contract {
+            get {
+                object obj = ResourceManager.GetObject("contract", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contract__1_ {
+            get {
+                object obj = ResourceManager.GetObject("contract (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_group_man_man_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-group-man-man-48", resourceCulture);
@@ -146,6 +176,16 @@ namespace ProjetGestionUsers.Properties {
         internal static System.Drawing.Bitmap icons8_regular_file_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-regular-file-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

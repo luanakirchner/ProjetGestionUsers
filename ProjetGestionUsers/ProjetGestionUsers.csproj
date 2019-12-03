@@ -52,6 +52,12 @@
     <Compile Include="FrmAddUsers.Designer.cs">
       <DependentUpon>FrmAddUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFicheClient1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFicheClient1.Designer.cs">
+      <DependentUpon>frmFicheClient1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAddUsers.resx">
       <DependentUpon>FrmAddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFicheClient1.resx">
+      <DependentUpon>frmFicheClient1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipale.resx">
       <DependentUpon>frmPrincipale.cs</DependentUpon>
@@ -142,6 +151,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-planner-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

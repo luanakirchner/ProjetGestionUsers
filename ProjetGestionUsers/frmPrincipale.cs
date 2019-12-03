@@ -20,11 +20,12 @@ namespace ProjetGestionUsers
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            lblMenu.Text = "Bienvenu";
         }
 
         private void HOME_Click(object sender, EventArgs e)
         {
+            lblMenu.Text = "Home";
             _objFrom?.Close();
             _objFrom = new frmHome
             {
@@ -51,28 +52,47 @@ namespace ProjetGestionUsers
 
         private void picMenu_Click(object sender, EventArgs e)
         {
+            //Menu normale
             if(pnlMenu.Width == 70)
             {
                 pnlMenu.Width = 236;
                 pnlPrincipale.Width = 1020;
                 pnlPrincipale.Location = new Point(252, 93);
-         
+                lblMenu.Location = new Point(243, 12);
+
             }
+            //menu redimensionner
             else
             {
                 pnlMenu.Width = 70;
                 pnlPrincipale.Width = 1080;
                 pnlPrincipale.Location = new Point(140, 93);
+                lblMenu.Location = new Point(131, 12);
                 //pnlPrincipale.Left = 100;
-               
+
             }
            
         }
 
         private void lblAddUsers_Click(object sender, EventArgs e)
         {
+            lblMenu.Text = "Nouveau utilisateur";
             _objFrom?.Close();
             _objFrom = new FrmAddUsers
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+            pnlPrincipale.Controls.Add(_objFrom);
+            _objFrom.Show();
+        }
+
+        private void lblFileUsers_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = "Fiche des clients";
+            _objFrom?.Close();
+            _objFrom = new frmFicheClient1
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,
