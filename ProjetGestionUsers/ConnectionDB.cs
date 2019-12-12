@@ -11,7 +11,7 @@ using System.IO;
 
 namespace ProjetGestionUsers
 {
-    class ConnectionDB
+     class ConnectionDB
     {
         private MySqlConnection connection;
         public ConnectionDB()
@@ -32,7 +32,7 @@ namespace ProjetGestionUsers
             connection = new MySqlConnection(connectionString);
 
         }
-        public void Open()
+        public void OpenDB()
         {
             try
             {
@@ -54,9 +54,16 @@ namespace ProjetGestionUsers
             long idProfession;
             long idCustomerCards;
             idAddresse = ControllerAddress(user.IdAddress);
-            idNationalites = ControllerNationalites(user.IdNationalite);
+            idNationalites = ControllerNationalites(user.Nationalite);
             idProfession = InsertProfession(user.IdProffession);
             idCustomerCards = InsertCustommerCards();
+            OpenDB();
+            string commande = "INSERT INTO Users VALUES(NULL,'"+user.Firstaname+"','" + user.Lastname + "',' 2019.12.26','" + user.Street + "','" + user.Phone + "','" + user.Cellphone + "','" + user.Email + "'," + user.Genre + "," +idAddresse + "," + idProfession + "," + idNationalites + "," + idCustomerCards + "); ";
+            // Création d'une commande MySQL en fonction de l'objet connection
+            MySqlCommand cmd = new MySqlCommand(commande, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+
 
         }
 
@@ -84,6 +91,7 @@ namespace ProjetGestionUsers
         }
         public List<Address> SelectAddressWhereCity(Address address)
         {
+            OpenDB();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT id,city,zip FROM address WHERE city = '"+address.City+"';";
             List<Address> listAddress = new List<Address>();
@@ -97,33 +105,42 @@ namespace ProjetGestionUsers
                 Address dataAddress = new Address(id,city,zip,address.Country);
                 listAddress.Add(dataAddress);
             }
+            connection.Close();
             return listAddress;
+
         }
         public long InsertAddress(Address address)
         {
-            string commande = "INSERT INTO address VALUES(NULL,'"+address.City+"',"+address.Zip+","+address.Country.Id+");";
+            OpenDB();
+            string commande = "INSERT INTO address VALUES(NULL,'"+address.City+"','"+address.Zip+"',"+address.Country+");";
             // Création d'une commande MySQL en fonction de l'objet connection
             MySqlCommand cmd = new MySqlCommand(commande, connection);
             cmd.ExecuteNonQuery();
+            connection.Close();
             return cmd.LastInsertedId;
+            
         }
         public long InsertProfession(Profesions profesions)
         {
+            OpenDB();
             string commande = "INSERT INTO Professions VALUES(NULL,'" + profesions.Profession + "','" + profesions.Localite + "');";
             // Création d'une commande MySQL en fonction de l'objet connection
             MySqlCommand cmd = new MySqlCommand(commande, connection);
             cmd.ExecuteNonQuery();
+            connection.Close();
             return cmd.LastInsertedId;
         }
         public long InsertCustommerCards()
         {
-            string commande = "INSERT INTO CustommerCards VALUES(NULL);";
+            OpenDB();
+            string commande = "INSERT INTO customercards(Description) VALUES('');";
             // Création d'une commande MySQL en fonction de l'objet connection
             MySqlCommand cmd = new MySqlCommand(commande, connection);
             cmd.ExecuteNonQuery();
+            connection.Close();
             return cmd.LastInsertedId;
         }
-        public long ControllerNationalites(Nationalites nationalites)
+        public long ControllerNationalites(string nationalites)
         {
             long idnationalites = 0;
             //Recuperer la list des address
@@ -145,10 +162,11 @@ namespace ProjetGestionUsers
             }
         }
 
-        public List<Nationalites> SelectNationalitesWhereNationalites(Nationalites nationalites)
+        public List<Nationalites> SelectNationalitesWhereNationalites(string nationalites)
         {
+            OpenDB();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT id, nationalite FROM Nationalites WHERE city = '" + nationalites.Nationalite + "';";
+            cmd.CommandText = "SELECT id, nationalite FROM Nationalites WHERE nationalite = '" + nationalites + "';";
             List<Nationalites> listnationalites = new List<Nationalites>();
             MySqlDataReader dataReader = cmd.ExecuteReader();
             while (dataReader.Read())
@@ -159,16 +177,19 @@ namespace ProjetGestionUsers
                 Nationalites dataAddress = new Nationalites(id, nationalite);
                 listnationalites.Add(dataAddress);
             }
+            connection.Close();
             return listnationalites;
 
         }
 
-        public long InsertNationalites(Nationalites nationalites)
+        public long InsertNationalites(string nationalites)
         {
-            string commande = "INSERT INTO Nationalites VALUES(NULL,'" + nationalites.Nationalite + "');";
+            OpenDB();
+            string commande = "INSERT INTO Nationalites VALUES(NULL,'" + nationalites + "');";
             // Création d'une commande MySQL en fonction de l'objet connection
             MySqlCommand cmd = new MySqlCommand(commande, connection);
             cmd.ExecuteNonQuery();
+            connection.Close();
             return cmd.LastInsertedId;
         }
     }

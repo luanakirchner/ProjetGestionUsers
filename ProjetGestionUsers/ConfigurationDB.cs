@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Json.Net;
+using Newtonsoft.Json;
 
 namespace ProjetGestionUsers
 {
@@ -18,9 +20,9 @@ namespace ProjetGestionUsers
         public string Uid { get => uid; set => uid = value; }
         public string Password { get => password; set => password = value; }
 
-        public static Item FromJson(string jsonString)
+        public static ConfigurationDB FromJson(string jsonString)
         {
-            return JsonConvert.DeserializeObject<Item>(jsonString);
+            return JsonConvert.DeserializeObject<ConfigurationDB>(jsonString);
         }
     }
 }

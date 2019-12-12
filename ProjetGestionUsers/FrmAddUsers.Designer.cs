@@ -311,6 +311,7 @@
             this.btnSauvegarder.TabIndex = 46;
             this.btnSauvegarder.Text = "Suavegarder";
             this.btnSauvegarder.UseVisualStyleBackColor = false;
+            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
             // 
             // btnClear
             // 

@@ -9,7 +9,7 @@ namespace ProjetGestionUsers
     class Users
     {
         private long id;
-        private Genres idGenre;
+        private int genre;
         private string firstaname;
         private string lastname;
         private DateTime birthdate;
@@ -19,7 +19,7 @@ namespace ProjetGestionUsers
         private string cellphone;
         private string email;
         private Profesions idProffession;
-        private Nationalites idNationalite;
+        private string nationalite;
         private CustomerCards idCustomercards;
 
 
@@ -31,12 +31,27 @@ namespace ProjetGestionUsers
         public string Phone { get => phone; set => phone = value; }
         public string Cellphone { get => cellphone; set => cellphone = value; }
         public string Email { get => email; set => email = value; }
-        internal Genres IdGenre { get => idGenre; set => idGenre = value; }
+        public int Genre { get => genre; set => genre = value; }
+        public string Nationalite { get => nationalite; set => nationalite = value; }
         internal Address IdAddress { get => idAddress; set => idAddress = value; }
         internal Profesions IdProffession { get => idProffession; set => idProffession = value; }
-        internal Nationalites IdNationalite { get => idNationalite; set => idNationalite = value; }
         internal CustomerCards IdCustomercards { get => idCustomercards; set => idCustomercards = value; }
 
+        public Users(string firstaname, string lastname, DateTime birthdate, string nationalite, string street, string phone, string cellphone, string email, int genre, Address adresse, Profesions profession, int id = 0)
+        {
+            this.id = id;
+            this.firstaname = firstaname;
+            this.lastname = lastname;
+            this.birthdate = birthdate;
+            this.street = street;
+            this.phone = phone;
+            this.cellphone = cellphone;
+            this.email = email;
+            this.genre = genre;
+            this.IdAddress = adresse;
+            this.IdProffession = profession;
+            this.nationalite = nationalite;
+        }
        
     }
 }

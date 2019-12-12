@@ -16,7 +16,7 @@ namespace ProjetGestionUsers
         public string Profession { get => profession; set => profession = value; }
         public string Localite { get => localite; set => localite = value; }
 
-        public Profesions(long id, string profession, string localite)
+        public Profesions(string profession, string localite, long id = 0 )
         {
             this.id = id;
             this.profession = profession;
