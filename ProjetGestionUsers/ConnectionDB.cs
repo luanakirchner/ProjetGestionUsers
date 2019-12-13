@@ -58,7 +58,7 @@ namespace ProjetGestionUsers
             idProfession = InsertProfession(user.IdProffession);
             idCustomerCards = InsertCustommerCards();
             OpenDB();
-            string commande = "INSERT INTO Users VALUES(NULL,'"+user.Firstaname+"','" + user.Lastname + "',' 2019.12.26','" + user.Street + "','" + user.Phone + "','" + user.Cellphone + "','" + user.Email + "'," + user.Genre + "," +idAddresse + "," + idProfession + "," + idNationalites + "," + idCustomerCards + "); ";
+            string commande = "INSERT INTO Users VALUES(NULL,'"+user.Firstaname+"','" + user.Lastname + "','"+user.Birthdate+"','" + user.Street + "','" + user.Phone + "','" + user.Cellphone + "','" + user.Email + "'," + user.Genre + "," +idAddresse + "," + idProfession + "," + idNationalites + "," + idCustomerCards + "); ";
             // Création d'une commande MySQL en fonction de l'objet connection
             MySqlCommand cmd = new MySqlCommand(commande, connection);
             cmd.ExecuteNonQuery();
@@ -191,6 +191,26 @@ namespace ProjetGestionUsers
             cmd.ExecuteNonQuery();
             connection.Close();
             return cmd.LastInsertedId;
+        }
+
+        public List<Genres> SelectGenres()
+        {
+            OpenDB();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT id, genre FROM Genres;";
+            List<Genres> listGenres = new List<Genres>();
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader["id"];
+                string genre = dataReader["genre"].ToString();
+
+                Genres dataGenres = new Genres(id, genre);
+                listGenres.Add(dataGenres);
+            }
+            connection.Close();
+            return listGenres;
+
         }
     }
 }

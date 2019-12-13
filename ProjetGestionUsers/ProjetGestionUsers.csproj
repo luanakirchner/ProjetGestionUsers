@@ -77,8 +77,11 @@
     <Compile Include="AppointmentHasUsers.cs" />
     <Compile Include="ConfigurationDB.cs" />
     <Compile Include="ConnectionDB.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Countrys.cs" />
     <Compile Include="CustomerCards.cs" />
+    <Compile Include="ExceptionDate.cs" />
+    <Compile Include="ExceptionValue.cs" />
     <Compile Include="FrmAddUsers.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -16,5 +16,10 @@ namespace ProjetGestionUsers
         {
             InitializeComponent();
         }
+
+        private void frmFicheClient2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

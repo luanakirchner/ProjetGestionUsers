@@ -12,7 +12,7 @@ namespace ProjetGestionUsers
         private int genre;
         private string firstaname;
         private string lastname;
-        private DateTime birthdate;
+        private string birthdate;
         private Address idAddress;
         private string street;
         private string phone;
@@ -26,7 +26,7 @@ namespace ProjetGestionUsers
         public long Id { get => id; set => id = value; }
         public string Firstaname { get => firstaname; set => firstaname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
-        public DateTime Birthdate { get => birthdate; set => birthdate = value; }
+        public string Birthdate { get => birthdate; set => birthdate = value; }
         public string Street { get => street; set => street = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Cellphone { get => cellphone; set => cellphone = value; }
@@ -37,7 +37,7 @@ namespace ProjetGestionUsers
         internal Profesions IdProffession { get => idProffession; set => idProffession = value; }
         internal CustomerCards IdCustomercards { get => idCustomercards; set => idCustomercards = value; }
 
-        public Users(string firstaname, string lastname, DateTime birthdate, string nationalite, string street, string phone, string cellphone, string email, int genre, Address adresse, Profesions profession, int id = 0)
+        public Users(string firstaname, string lastname, string birthdate, string nationalite, string street, string phone, string cellphone, string email, int genre, Address adresse, Profesions profession, int id = 0)
         {
             this.id = id;
             this.firstaname = firstaname;

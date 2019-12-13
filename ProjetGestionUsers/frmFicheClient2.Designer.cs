@@ -229,6 +229,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFicheClient2";
             this.Text = "frmFicheClient2";
+            this.Load += new System.EventHandler(this.frmFicheClient2_Load);
             this.gpbRemarqueRendezVous.ResumeLayout(false);
             this.gpbRemarqueRendezVous.PerformLayout();
             this.ResumeLayout(false);

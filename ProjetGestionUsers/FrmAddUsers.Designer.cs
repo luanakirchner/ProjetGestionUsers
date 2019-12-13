@@ -309,7 +309,7 @@
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(354, 46);
             this.btnSauvegarder.TabIndex = 46;
-            this.btnSauvegarder.Text = "Suavegarder";
+            this.btnSauvegarder.Text = "Sauvegarder";
             this.btnSauvegarder.UseVisualStyleBackColor = false;
             this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
             // 
@@ -324,6 +324,7 @@
             this.btnClear.TabIndex = 47;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnFicheClient
             // 
@@ -453,6 +454,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddUsers";
             this.Text = "1020; 634";
+            this.Load += new System.EventHandler(this.FrmAddUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grbAdresse.ResumeLayout(false);
             this.grbAdresse.PerformLayout();
