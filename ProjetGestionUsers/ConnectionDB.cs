@@ -43,6 +43,28 @@ namespace ProjetGestionUsers
                 MessageBox.Show(e.Message + " Erreur - ConnectionDB");
             }
         }
+
+
+       /* public List<Users> SelectUserForLastNameFirstName(string nom, string prenom)
+        {
+            OpenDB();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT id,nom FROM countrys WHERE country = '" + countrys + "';";
+            List<Users> listuser = new List<Users>();
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader["id"];
+                string country = dataReader["country"].ToString();
+
+                Countrys dataCountry = new Countrys(id, country);
+                listCountry.Add(dataCountry);
+            }
+            connection.Close();
+            return listuser;
+           
+        }*/
+
         /// <summary>
         /// 
         /// </summary>
@@ -67,13 +89,71 @@ namespace ProjetGestionUsers
 
         }
 
+        public long ControllerCountryAdress(string country)
+        {
+            long idCountry = 0;
+            //Recuperer la list des pays
+            List<Countrys> listCountry = SelectCountrysWhereCountry(country);
+            //Si le pays exite déjà -- Recuperer l'id
+            if (listCountry.Count > 0)
+            {
+                foreach (Countrys value in listCountry)
+                {
+                    idCountry = value.Id;
+                }
+                return idCountry;
+            }
+            //Si le pays n'exite pas -- Inserer le pays et recuperer l'id
+            else
+            {
+                idCountry = InsertCountry(country);
+                return idCountry;
+            }
+
+        }
+        /// <summary>
+        /// Recupere la liste de pays par rapport au pays demandée 
+        /// </summary>
+        /// <param name="countrys">Pays à recuperer</param>
+        /// <returns>Liste de pays touvrée</returns>
+        public List<Countrys> SelectCountrysWhereCountry(string countrys)
+        {
+            OpenDB();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT id,country FROM countrys WHERE country = '" + countrys + "';";
+            List<Countrys> listCountry = new List<Countrys>();
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader["id"];
+                string country = dataReader["country"].ToString();
+
+                Countrys dataCountry = new Countrys(id, country);
+                listCountry.Add(dataCountry);
+            }
+            connection.Close();
+            return listCountry;
+
+        }
+        public long InsertCountry(string Countrys)
+        {
+            OpenDB();
+            string commande = "INSERT INTO countrys VALUES(NULL,'" + Countrys + "');";
+            // Création d'une commande MySQL en fonction de l'objet connection
+            MySqlCommand cmd = new MySqlCommand(commande, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            return cmd.LastInsertedId;
+
+        }
+
         public long ControllerAddress(Address address)
         {
             long idAddresse = 0;
             //Recuperer la list des address
             List<Address> listAddress = SelectAddressWhereCity(address);
             //Si l'address exite déjà -- Recuperer l'id
-            if(listAddress.Count > 1)
+            if(listAddress.Count > 0)
             {
                 foreach (Address value in listAddress)
                 {
@@ -146,7 +226,7 @@ namespace ProjetGestionUsers
             //Recuperer la list des address
             List<Nationalites> listnationalites = SelectNationalitesWhereNationalites(nationalites);
             //Si l'address exite déjà -- Recuperer l'id
-            if (listnationalites.Count > 1)
+            if (listnationalites.Count > 0)
             {
                 foreach (Nationalites value in listnationalites)
                 {

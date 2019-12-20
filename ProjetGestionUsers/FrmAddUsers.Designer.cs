@@ -108,11 +108,11 @@
             this.lblPays.AutoSize = true;
             this.lblPays.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPays.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPays.Location = new System.Drawing.Point(104, 19);
+            this.lblPays.Location = new System.Drawing.Point(88, 19);
             this.lblPays.Name = "lblPays";
-            this.lblPays.Size = new System.Drawing.Size(65, 29);
+            this.lblPays.Size = new System.Drawing.Size(81, 29);
             this.lblPays.TabIndex = 19;
-            this.lblPays.Text = "Pays";
+            this.lblPays.Text = "Pays *";
             // 
             // txtVille
             // 

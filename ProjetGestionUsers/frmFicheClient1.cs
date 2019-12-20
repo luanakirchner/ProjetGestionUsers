@@ -20,10 +20,27 @@ namespace ProjetGestionUsers
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            clienTrouve = true;
-            this.Close();
+            try
+            {
+                Controller.ChekValuesNotVide(txtNom.Text,txtPrenom.Text);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            clienTrouve = false;
+            if (clienTrouve == true)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
+           
+           
 
         }
     }

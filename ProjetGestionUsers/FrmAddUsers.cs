@@ -26,27 +26,28 @@ namespace ProjetGestionUsers
             {
                 if (cmbGenre.SelectedIndex == -1)
                 {
-                    throw new Exception("Entrez en genre");
+                    throw new Exception("Entrez un genre");
                 }
+                //Recuperer le genre selectionée
                 Genres genreSelectionne = (Genres)cmbGenre.SelectedItem;
-      
-                //Controller les champs obligatoire non vides
-                Controller.ChekValuesNotVide(txtNom.Text, txtPrenom.Text);
-
+                //Controller les champs obligatoire, non vides
+                Controller.ChekValuesNotVide(txtNom.Text, txtPrenom.Text, txtPays.Text);
+                //Recuperer l'id du pays
+                long idCountry = conectDB.ControllerCountryAdress(txtPays.Text);
                 //Controller le format de la date
                 Controller.DateController(txtDateDeNaissance.Text);
-               /* //Créer un objet dans classe adresse
-                Address adresse = new Address(txtVille.Text, txtNpa.Text, 1);
-                //Créer un objet dans classe Profession
-                Profesions profesion = new Profesions(txtProfession.Text, txtLieu.Text);
-                //Créer un objet dans classe Users
-                Users utilisateur = new Users(txtPrenom.Text, txtNom.Text, txtDateDeNaissance.Text, txtNationalite.Text, txtRue.Text, txtTelephoneFixe.Text, txtTelephonePortable.Text, txtEmail.Text, 1, adresse, profesion);
-                //Passe l'objet de la classe user dans la methode d'insertions des données dans MySql
-                conectDB.InsertUsers(utilisateur);
-                MessageBox.Show("Votre utilisateur a été ajouteé");
-                ClearChamps();*/
+                /* //Créer un objet dans classe adresse
+                 Address adresse = new Address(txtVille.Text, txtNpa.Text, idCountry);
+                 //Créer un objet dans classe Profession
+                 Profesions profesion = new Profesions(txtProfession.Text, txtLieu.Text);
+                 //Créer un objet dans classe Users
+                 Users utilisateur = new Users(txtPrenom.Text, txtNom.Text, txtDateDeNaissance.Text, txtNationalite.Text, txtRue.Text, txtTelephoneFixe.Text, txtTelephonePortable.Text, txtEmail.Text, genreSelectionne.Id, adresse, profesion);
+                 //Passe l'objet de la classe user dans la methode d'insertions des données dans MySql
+                 conectDB.InsertUsers(utilisateur);
+                 MessageBox.Show("Votre utilisateur a été ajouteé");
+                 ClearChamps();*/
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
